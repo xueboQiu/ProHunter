@@ -151,9 +151,9 @@ ProHunter/
 
 **Sampled threat graph visualization**:
 
-![image-20251129220037788](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251129220037788.png)
+<img src="assets/threat_graph_visualization.png" alt="Threat Graph Visualization" style="zoom:60%;" />
 
 **Threat hunting results:**
 
-![image-20251129220043744](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251129220043744.png)
+<img src="assets/threat_hunting_results.png" alt="Threat Hunting Results" style="zoom: 80%;" />
 
