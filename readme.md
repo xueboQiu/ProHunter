@@ -146,3 +146,14 @@ ProHunter/
 ├── requirements.txt               # Dependencies
 └── readme.md                      
 ```
+
+## 📤 Output
+
+**Sampled threat graph visualization**:
+
+![image-20251129220037788](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251129220037788.png)
+
+**Threat hunting results:**
+
+![image-20251129220043744](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251129220043744.png)
+
