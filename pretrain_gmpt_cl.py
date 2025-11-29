@@ -343,8 +343,8 @@ def main():
         acc = eval(args, model, device, val_loader)
         if best_val_acc <= acc:
             best_val_acc = acc
-            torch.save(model.gnn.state_dict(), f'models/{args.mode}/{epoch}.pth')
-            torch.save(model.cgmn.state_dict(), f'models/{args.mode}/{epoch}.cgmn.pth')
+            torch.save(model.gnn.state_dict(), f'models/{args.mode}/best.pth')
+            torch.save(model.cgmn.state_dict(), f'models/{args.mode}/best.cgmn.pth')
 
 if __name__ == "__main__":
     main()
