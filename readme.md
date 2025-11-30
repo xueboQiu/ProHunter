@@ -1,8 +1,10 @@
 ## 📋 Overview
 
-This project is a core module of the ProHunter system, primarily designed to perform malicious judgment on threat graphs sampled from the [PPG module](https://github.com/xueboQiu/PPG). The main idea of this methods is that uses inexact graph vector matching to calculate vector similarity between threat graphs and attack query graphs generated from CTI, producing threat scores for judgment.
+This project is a core module of the ProHunter system, primarily designed to perform malicious judgment on threat graphs sampled from the [PPG module](https://github.com/xueboQiu/PPG). The main idea of this methods is that uses inexact graph vector matching to calculate vector similarity between threat graphs and attack query graphs generated from CTI, producing threat scores for judgment. The framework is illustrated as follows.
 
-**Note:** This project serves as the downstream detection module of PPG. For the complete workflow including provenance graph storage and threat graph sampling, please refer to the [PPG module](https://github.com/xueboQiu/PPG) first.
+<img src="assets/prohunter_framework.png" alt="the framework of ProHunter system" style="zoom:60%;" />
+
+**Note:** This project serves as the downstream detection module of PPG, i.e., Attack Representation & Matching. For the complete workflow including provenance graph storage and threat graph sampling, please refer to the [PPG module](https://github.com/xueboQiu/PPG) first.
 
 ---
 
@@ -21,20 +23,7 @@ cd ProHunter
 pip install -r requirements.txt
 ```
 
-### Basic Example
 
-The project provides pre-processed CADETS dataset samples for immediate testing:
-
-```bash
-# Direct evaluation (using pre-trained model)
-python pretrain_gmpt_cl.py --mode=cadets --eval=True
-
-# Re-train the model
-python pretrain_gmpt_cl.py --mode=cadets --eval=False
-python pretrain_gmpt_cl.py --mode=cadets --eval=True
-```
-
----
 
 ## 📊 Functional Modules
 
@@ -57,6 +46,10 @@ Visualize threat graphs sampled by the PPG module.
    ```
    
    Specify the corresponding dataset in the script. The program will automatically read and visualize subgraph data from the `sgs_demo` directory.
+
+**Example Visualization Result**:
+
+<img src="assets/threat_graph_visualization.png" alt="Threat Graph Visualization" style="zoom:60%;" />
 
 ---
 
@@ -113,6 +106,23 @@ python pretrain_gmpt_cl.py --mode={dataset_name} --eval=True
 
 The model will load model parameters from `models/{dataset_name}/best.pth`.
 
+### 3️⃣ Provided Example
+
+The project provides pre-processed CADETS dataset samples for immediate testing:
+
+```bash
+# Direct evaluation (using pre-trained model)
+python pretrain_gmpt_cl.py --mode=cadets --eval=True
+
+# Re-train the model
+python pretrain_gmpt_cl.py --mode=cadets --eval=False
+python pretrain_gmpt_cl.py --mode=cadets --eval=True
+```
+
+**Example Evaluation Results :**
+
+<img src="assets/threat_hunting_results.png" alt="Threat Hunting Results" width="80%" />
+
 ---
 
 ## 📁 Project Structure
@@ -146,14 +156,4 @@ ProHunter/
 ├── requirements.txt               # Dependencies
 └── readme.md                      
 ```
-
-## 📤 Output
-
-**Sampled threat graph visualization**:
-
-<img src="assets/threat_graph_visualization.png" alt="Threat Graph Visualization" style="zoom:60%;" />
-
-**Threat hunting results:**
-
-<img src="assets/threat_hunting_results.png" alt="Threat Hunting Results" style="zoom: 80%;" />
 
